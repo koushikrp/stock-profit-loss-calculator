@@ -9,12 +9,12 @@ function calculateProfitOrLoss(initial, input_quantity, current) {
 	if (initial > current) {
 		bodySelector.classList.add("negative");
 		var loss = (initial - current) * input_quantity;
-		var lossPercentage = (loss / initial) * 100;
+		var lossPercentage = (loss / (initial * input_quantity)) * 100;
 		showOutput(`Sorry! Loss occurred is ${loss}, with the Loss Percentage ${lossPercentage.toFixed(2)}% 😟`);
 	} else if (current > initial) {
 		bodySelector.classList.add("positive");
 		var profit = (current - initial) * input_quantity;
-		var profitPercentage = (profit / initial) * 100;
+		var profitPercentage = (profit / (initial * input_quantity)) * 100;
 		showOutput(
 			`Congrats! Profit occurred is ${profit}, with the Profit Percentage ${profitPercentage.toFixed(2)}% 😃`
 		);
